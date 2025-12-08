@@ -12,6 +12,17 @@ import { slugField } from 'payload'
 import { populatePublishedAt } from '../../hooks/populatePublishedAt'
 import { generatePreviewPath } from '../../utilities/generatePreviewPath'
 import { revalidateDelete, revalidatePage } from './hooks/revalidatePage'
+import { Right } from '../../blocks/Right/config'
+import { Conten } from '../../blocks/Conten/config'
+import { Main } from '../../blocks/Main/config'
+import { Contact } from '../../blocks/Contact/config'
+import { Down } from '../../blocks/Down/config'
+import { ContactsBlocks } from '../../blocks/ContactsBlocks/config'
+import { Both }  from '../../blocks/Both/config'
+import { Oem } from '../../blocks/Oem/config'
+
+
+
 
 import {
   MetaDescriptionField,
@@ -72,7 +83,7 @@ export const Pages: CollectionConfig<'pages'> = {
             {
               name: 'layout',
               type: 'blocks',
-              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock],
+              blocks: [CallToAction, Content, MediaBlock, Archive, FormBlock, Right, Conten, Main, Contact , Down, ContactsBlocks, Both, Oem],
               required: true,
               admin: {
                 initCollapsed: true,
