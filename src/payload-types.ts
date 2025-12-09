@@ -159,6 +159,21 @@ export interface Page {
   title: string;
   hero?: {
     type?: ('none' | 'highImpact' | 'mediumImpact' | 'lowImpact') | null;
+    richText?: {
+      root: {
+        type: string;
+        children: {
+          type: any;
+          version: number;
+          [k: string]: unknown;
+        }[];
+        direction: ('ltr' | 'rtl') | null;
+        format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+        indent: number;
+        version: number;
+      };
+      [k: string]: unknown;
+    } | null;
     links?:
       | {
           link: {
@@ -1309,6 +1324,7 @@ export interface PagesSelect<T extends boolean = true> {
     | T
     | {
         type?: T;
+        richText?: T;
         links?:
           | T
           | {
